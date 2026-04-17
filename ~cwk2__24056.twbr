@@ -16,6 +16,7 @@
     <SetMembershipControl />
     <SheetIdentifierTracking />
     <SortTagCleanup />
+    <SpatialFileLayer />
     <WindowsPersistSimpleIdentifiers />
     <ZoneBackgroundTransparency />
   </document-format-change-manifest>
@@ -26,8 +27,8 @@
   <datasources>
     <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
       <aliases enabled='yes' />
-      <column caption='Select County' datatype='string' name='[Geography_Pivot Parameter]' param-domain-type='list' role='measure' type='nominal' value='&quot;Waltham Forest&quot;'>
-        <calculation class='tableau' formula='&quot;Waltham Forest&quot;' />
+      <column caption='Select County' datatype='string' name='[Geography_Pivot Parameter]' param-domain-type='list' role='measure' type='nominal' value='&quot;Cambridgeshire&quot;'>
+        <calculation class='tableau' formula='&quot;Cambridgeshire&quot;' />
         <members>
           <member value='&quot;Barking and Dagenham&quot;' />
           <member value='&quot;Barnet&quot;' />
@@ -212,266 +213,6 @@
           <member value='&quot;Proportion&quot;' />
         </members>
       </column>
-    </datasource>
-    <datasource caption='Data11&amp;21' inline='true' name='federated.0h7ur751upo8g615ls4z619gee9r' version='18.1'>
-      <connection class='federated'>
-        <named-connections>
-          <named-connection caption='FData' name='textscan.0kbj6g313ercd51gk2icj0lfkv16'>
-            <connection class='textscan' directory='C:/Users/Aman Kumar Singh/Desktop/Visual Analytics' filename='FData.csv' password='' server='' />
-          </named-connection>
-        </named-connections>
-        <relation name='Pivot' type='pivot'>
-          <columns>
-            <column datatype='string' name='Pivot Field Names' />
-            <column datatype='integer' name='Pivot Field Values' />
-          </columns>
-          <tag name='Pivot Field Names'>
-            <value name='[Youth 2021]' />
-            <value name='[Working 2021]' />
-            <value name='[Retired 2021]' />
-            <value name='[Retired 2011]' />
-            <value name='[Working 2011]' />
-            <value name='[Youth 2011]' />
-          </tag>
-          <groups>
-            <group name='Pivot Field Values'>
-              <field name='[FData.csv].[0--19]' />
-              <field name='[FData.csv].[20--64]' />
-              <field name='[FData.csv].[65--]' />
-              <field name='[FData.csv].[Retired-age 65-90]' />
-              <field name='[FData.csv].[Working-age 20-64]' />
-              <field name='[FData.csv].[Young 0-19]' />
-            </group>
-          </groups>
-          <relation connection='textscan.0kbj6g313ercd51gk2icj0lfkv16' name='FData.csv' table='[FData#csv]' type='table'>
-            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
-              <column datatype='integer' name='F1' ordinal='0' />
-              <column datatype='string' name='geography code_x' ordinal='1' />
-              <column datatype='string' name='geography' ordinal='2' />
-              <column datatype='integer' name='Young 0-19' ordinal='3' />
-              <column datatype='integer' name='Working-age 20-64' ordinal='4' />
-              <column datatype='integer' name='Retired-age 65-90' ordinal='5' />
-              <column datatype='integer' name='0--19' ordinal='6' />
-              <column datatype='integer' name='20--64' ordinal='7' />
-              <column datatype='integer' name='65--' ordinal='8' />
-              <column datatype='integer' name='cluster' ordinal='9' />
-            </columns>
-          </relation>
-        </relation>
-        <metadata-records>
-          <metadata-record class='capability'>
-            <remote-name />
-            <remote-type>0</remote-type>
-            <parent-name>[FData.csv]</parent-name>
-            <remote-alias />
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
-              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
-              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
-              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
-              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
-              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
-              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>F1</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[F1]</local-name>
-            <parent-name>[FData.csv]</parent-name>
-            <remote-alias>F1</remote-alias>
-            <ordinal>0</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[FData.csv_B53B076430B54AD08ED00E1C7FA1EE1B]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>geography code_x</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[geography code_x]</local-name>
-            <parent-name>[FData.csv]</parent-name>
-            <remote-alias>geography code_x</remote-alias>
-            <ordinal>1</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RGB' />
-            <object-id>[FData.csv_B53B076430B54AD08ED00E1C7FA1EE1B]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>geography</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[geography]</local-name>
-            <parent-name>[FData.csv]</parent-name>
-            <remote-alias>geography</remote-alias>
-            <ordinal>2</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RGB' />
-            <object-id>[FData.csv_B53B076430B54AD08ED00E1C7FA1EE1B]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>cluster</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[cluster]</local-name>
-            <parent-name>[FData.csv]</parent-name>
-            <remote-alias>cluster</remote-alias>
-            <ordinal>3</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[FData.csv_B53B076430B54AD08ED00E1C7FA1EE1B]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Pivot Field Names</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[Pivot Field Names]</local-name>
-            <parent-name>[Pivot]</parent-name>
-            <remote-alias>Pivot Field Names</remote-alias>
-            <ordinal>4</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[FData.csv_B53B076430B54AD08ED00E1C7FA1EE1B]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Pivot Field Values</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[Pivot Field Values]</local-name>
-            <parent-name>[Pivot]</parent-name>
-            <remote-alias>Pivot Field Values</remote-alias>
-            <ordinal>5</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[FData.csv_B53B076430B54AD08ED00E1C7FA1EE1B]</object-id>
-          </metadata-record>
-        </metadata-records>
-      </connection>
-      <aliases enabled='yes' />
-      <column caption='Cluster Name21-11' datatype='string' name='[Calculation_0662513302777862]' role='dimension' type='nominal'>
-        <calculation class='tableau' formula='CASE [cluster]&#13;&#10;WHEN 0 THEN &quot;Suburban&quot;&#13;&#10;WHEN 1 THEN &quot;Commuters&quot;&#13;&#10;WHEN 2 THEN &quot;Mixed&quot;&#13;&#10;WHEN 3 THEN &quot;Urban&quot;&#13;&#10;END' />
-      </column>
-      <column caption='Total Population per cluster' datatype='integer' name='[Calculation_0662513308577799]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='{FIXED [Calculation_0662513302777862], [Pivot Field Names - Split 2]: SUM([Pivot Field Values])}' />
-      </column>
-      <column caption='Proportion Value' datatype='real' default-format='p0.00%' name='[Calculation_0662513309093896]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='SUM([Pivot Field Values])/SUM([Calculation_0662513308577799])' />
-      </column>
-      <column caption='Dynamic Dumbell' datatype='real' name='[Calculation_0662513309462537]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = &quot;Absolute&quot;&#13;&#10;THEN SUM([Pivot Field Values])&#13;&#10;ELSE [Calculation_0662513309093896]&#13;&#10;END' />
-      </column>
-      <column caption='Calculation1' datatype='string' name='[Calculation_2511068226129929]' role='measure' type='nominal'>
-        <calculation class='tableau' formula='IF ATTR([Parameters].[Parameter 1]) = &quot;Absolute&quot; THEN &#13;&#10;    REGEXP_REPLACE(STR(ROUND([Calculation_0662513309462537],0)),&quot;(\d)(?=(\d{3})+$)&quot;, &quot;$1,&quot;) + &quot; &quot; + &quot;Persons&quot;&#13;&#10;ELSE &#13;&#10;    STR(ROUND([Calculation_0662513309462537] * 100, 1)) + &quot;%&quot;&#13;&#10;END' />
-      </column>
-      <column caption='Age Category' datatype='string' name='[Pivot Field Names - Split 1]' role='dimension' type='nominal' user:SplitFieldIndex='1' user:SplitFieldOrigin='[federated.0h7ur751upo8g615ls4z619gee9r].[Pivot Field Names]'>
-        <calculation class='tableau' formula='TRIM( SPLIT( [Pivot Field Names], &quot; &quot;, 1 ) )' />
-        <aliases>
-          <alias key='&quot;Retired&quot;' value='Retired (65+)' />
-          <alias key='&quot;Working&quot;' value='Working (20-64)' />
-          <alias key='&quot;Youth&quot;' value='Youth (0-19)' />
-        </aliases>
-      </column>
-      <column caption='Year' datatype='string' name='[Pivot Field Names - Split 2]' role='dimension' type='nominal' user:SplitFieldIndex='2' user:SplitFieldOrigin='[federated.0h7ur751upo8g615ls4z619gee9r].[Pivot Field Names]'>
-        <calculation class='tableau' formula='TRIM( SPLIT( [Pivot Field Names], &quot; &quot;, 2 ) )' />
-      </column>
-      <column caption='Category Year' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal' />
-      <column caption='Population' datatype='integer' default-format='n#,##0,K;-#,##0,K' name='[Pivot Field Values]' role='measure' type='quantitative' />
-      <column caption='Data11&amp;21' datatype='table' name='[__tableau_internal_object_id__].[FData.csv_B53B076430B54AD08ED00E1C7FA1EE1B]' role='measure' type='quantitative' />
-      <column caption='Cluster21-11' datatype='integer' name='[cluster]' role='dimension' type='ordinal' />
-      <column caption='Geography Code X' datatype='string' name='[geography code_x]' role='dimension' type='nominal' />
-      <column caption='Geography' datatype='string' name='[geography]' role='dimension' type='nominal' />
-      <column-instance column='[Calculation_0662513302777862]' derivation='None' name='[none:Calculation_0662513302777862:nk]' pivot='key' type='nominal' />
-      <column-instance column='[Pivot Field Names - Split 2]' derivation='None' name='[none:Pivot Field Names - Split 2:nk]' pivot='key' type='nominal' />
-      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
-      <style>
-        <style-rule element='mark'>
-          <encoding attr='color' field='[none:Pivot Field Names - Split 2:nk]' type='palette'>
-            <map to='#1b1b1b'>
-              <bucket>&quot;2021&quot;</bucket>
-            </map>
-            <map to='#79706e'>
-              <bucket>&quot;2011&quot;</bucket>
-            </map>
-          </encoding>
-          <encoding attr='color' field='[none:Calculation_0662513302777862:nk]' type='palette'>
-            <map to='#1b1b1b'>
-              <bucket>&quot;Suburban&quot;</bucket>
-            </map>
-            <map to='#59a14f'>
-              <bucket>&quot;Mixed&quot;</bucket>
-            </map>
-            <map to='#edc948'>
-              <bucket>&quot;Urban&quot;</bucket>
-            </map>
-            <map to='#ff2819'>
-              <bucket>&quot;Commuters&quot;</bucket>
-            </map>
-          </encoding>
-        </style-rule>
-      </style>
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
-      </semantic-values>
-      <datasource-dependencies datasource='Parameters'>
-        <column caption='Value Type' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Absolute&quot;'>
-          <calculation class='tableau' formula='&quot;Absolute&quot;' />
-        </column>
-      </datasource-dependencies>
-      <object-graph>
-        <objects>
-          <object caption='Data11&amp;21' id='FData.csv_B53B076430B54AD08ED00E1C7FA1EE1B'>
-            <properties context=''>
-              <relation name='Pivot' type='pivot'>
-                <columns>
-                  <column datatype='string' name='Pivot Field Names' />
-                  <column datatype='integer' name='Pivot Field Values' />
-                </columns>
-                <tag name='Pivot Field Names'>
-                  <value name='[Youth 2021]' />
-                  <value name='[Working 2021]' />
-                  <value name='[Retired 2021]' />
-                  <value name='[Retired 2011]' />
-                  <value name='[Working 2011]' />
-                  <value name='[Youth 2011]' />
-                </tag>
-                <groups>
-                  <group name='Pivot Field Values'>
-                    <field name='[FData.csv].[0--19]' />
-                    <field name='[FData.csv].[20--64]' />
-                    <field name='[FData.csv].[65--]' />
-                    <field name='[FData.csv].[Retired-age 65-90]' />
-                    <field name='[FData.csv].[Working-age 20-64]' />
-                    <field name='[FData.csv].[Young 0-19]' />
-                  </group>
-                </groups>
-                <relation connection='textscan.0kbj6g313ercd51gk2icj0lfkv16' name='FData.csv' table='[FData#csv]' type='table'>
-                  <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
-                    <column datatype='integer' name='F1' ordinal='0' />
-                    <column datatype='string' name='geography code_x' ordinal='1' />
-                    <column datatype='string' name='geography' ordinal='2' />
-                    <column datatype='integer' name='Young 0-19' ordinal='3' />
-                    <column datatype='integer' name='Working-age 20-64' ordinal='4' />
-                    <column datatype='integer' name='Retired-age 65-90' ordinal='5' />
-                    <column datatype='integer' name='0--19' ordinal='6' />
-                    <column datatype='integer' name='20--64' ordinal='7' />
-                    <column datatype='integer' name='65--' ordinal='8' />
-                    <column datatype='integer' name='cluster' ordinal='9' />
-                  </columns>
-                </relation>
-              </relation>
-            </properties>
-          </object>
-        </objects>
-      </object-graph>
     </datasource>
     <datasource caption='Data11(copy)' inline='true' name='federated.0thi0nr1oqsrg512lb0ch02g9zf4 (copy)' version='18.1'>
       <connection class='federated'>
@@ -1394,15 +1135,24 @@
         <semantic-value key='[ZipCode].[Name]' value='%null%' />
       </semantic-values>
       <datasource-dependencies datasource='Parameters'>
-        <column caption='Select County' datatype='string' name='[Geography_Pivot Parameter]' param-domain-type='list' role='measure' type='nominal' value='&quot;Waltham Forest&quot;'>
-          <calculation class='tableau' formula='&quot;Waltham Forest&quot;' />
+        <column caption='Select County' datatype='string' name='[Geography_Pivot Parameter]' param-domain-type='list' role='measure' type='nominal' value='&quot;Cambridgeshire&quot;'>
+          <calculation class='tableau' formula='&quot;Cambridgeshire&quot;' />
         </column>
         <column caption='Value Type' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Absolute&quot;'>
           <calculation class='tableau' formula='&quot;Absolute&quot;' />
         </column>
       </datasource-dependencies>
       <datasource-dependencies datasource='federated.0thi0nr1oqsrg512lb0ch02g9zf4'>
-        <column caption='Geography' datatype='string' name='[geography]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+        <column caption='Geography' datatype='string' name='[geography]' role='dimension' semantic-role='[County].[Name]' type='nominal'>
+          <semantic-values semantic-role='[Geographical].[Latitude]'>
+            <semantic-value key='&quot;Barking and Dagenham&quot;' value='51.553800000000003' />
+            <semantic-value key='&quot;Barnet&quot;' value='51.6252' />
+          </semantic-values>
+          <semantic-values semantic-role='[Geographical].[Longitude]'>
+            <semantic-value key='&quot;Barking and Dagenham&quot;' value='0.14810000000000001' />
+            <semantic-value key='&quot;Barnet&quot;' value='-0.1517' />
+          </semantic-values>
+        </column>
       </datasource-dependencies>
       <object-graph>
         <objects>
@@ -1517,6 +1267,266 @@
         </objects>
       </object-graph>
     </datasource>
+    <datasource caption='Data11&amp;21' inline='true' name='federated.0h7ur751upo8g615ls4z619gee9r' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='FData' name='textscan.0kbj6g313ercd51gk2icj0lfkv16'>
+            <connection class='textscan' directory='C:/Users/Aman Kumar Singh/Desktop/Visual Analytics' filename='FData.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation name='Pivot' type='pivot'>
+          <columns>
+            <column datatype='string' name='Pivot Field Names' />
+            <column datatype='integer' name='Pivot Field Values' />
+          </columns>
+          <tag name='Pivot Field Names'>
+            <value name='[Youth 2021]' />
+            <value name='[Working 2021]' />
+            <value name='[Retired 2021]' />
+            <value name='[Retired 2011]' />
+            <value name='[Working 2011]' />
+            <value name='[Youth 2011]' />
+          </tag>
+          <groups>
+            <group name='Pivot Field Values'>
+              <field name='[FData.csv].[0--19]' />
+              <field name='[FData.csv].[20--64]' />
+              <field name='[FData.csv].[65--]' />
+              <field name='[FData.csv].[Retired-age 65-90]' />
+              <field name='[FData.csv].[Working-age 20-64]' />
+              <field name='[FData.csv].[Young 0-19]' />
+            </group>
+          </groups>
+          <relation connection='textscan.0kbj6g313ercd51gk2icj0lfkv16' name='FData.csv' table='[FData#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='string' name='geography code_x' ordinal='1' />
+              <column datatype='string' name='geography' ordinal='2' />
+              <column datatype='integer' name='Young 0-19' ordinal='3' />
+              <column datatype='integer' name='Working-age 20-64' ordinal='4' />
+              <column datatype='integer' name='Retired-age 65-90' ordinal='5' />
+              <column datatype='integer' name='0--19' ordinal='6' />
+              <column datatype='integer' name='20--64' ordinal='7' />
+              <column datatype='integer' name='65--' ordinal='8' />
+              <column datatype='integer' name='cluster' ordinal='9' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[FData.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[FData.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[FData.csv_B53B076430B54AD08ED00E1C7FA1EE1B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>geography code_x</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[geography code_x]</local-name>
+            <parent-name>[FData.csv]</parent-name>
+            <remote-alias>geography code_x</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[FData.csv_B53B076430B54AD08ED00E1C7FA1EE1B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>geography</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[geography]</local-name>
+            <parent-name>[FData.csv]</parent-name>
+            <remote-alias>geography</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[FData.csv_B53B076430B54AD08ED00E1C7FA1EE1B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cluster</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[cluster]</local-name>
+            <parent-name>[FData.csv]</parent-name>
+            <remote-alias>cluster</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[FData.csv_B53B076430B54AD08ED00E1C7FA1EE1B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Names</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Pivot Field Names]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Names</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[FData.csv_B53B076430B54AD08ED00E1C7FA1EE1B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Values</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Pivot Field Values]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Values</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[FData.csv_B53B076430B54AD08ED00E1C7FA1EE1B]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Cluster Name21-11' datatype='string' name='[Calculation_0662513302777862]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CASE [cluster]&#13;&#10;WHEN 0 THEN &quot;Suburban&quot;&#13;&#10;WHEN 1 THEN &quot;Commuters&quot;&#13;&#10;WHEN 2 THEN &quot;Mixed&quot;&#13;&#10;WHEN 3 THEN &quot;Urban&quot;&#13;&#10;END' />
+      </column>
+      <column caption='Total Population per cluster' datatype='integer' name='[Calculation_0662513308577799]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{FIXED [Calculation_0662513302777862], [Pivot Field Names - Split 2]: SUM([Pivot Field Values])}' />
+      </column>
+      <column caption='Proportion Value' datatype='real' default-format='p0.00%' name='[Calculation_0662513309093896]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([Pivot Field Values])/SUM([Calculation_0662513308577799])' />
+      </column>
+      <column caption='Dynamic Dumbell' datatype='real' name='[Calculation_0662513309462537]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = &quot;Absolute&quot;&#13;&#10;THEN SUM([Pivot Field Values])&#13;&#10;ELSE [Calculation_0662513309093896]&#13;&#10;END' />
+      </column>
+      <column caption='Calculation1' datatype='string' name='[Calculation_2511068226129929]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='IF ATTR([Parameters].[Parameter 1]) = &quot;Absolute&quot; THEN &#13;&#10;    REGEXP_REPLACE(STR(ROUND([Calculation_0662513309462537],0)),&quot;(\d)(?=(\d{3})+$)&quot;, &quot;$1,&quot;) + &quot; &quot; + &quot;Persons&quot;&#13;&#10;ELSE &#13;&#10;    STR(ROUND([Calculation_0662513309462537] * 100, 1)) + &quot;%&quot;&#13;&#10;END' />
+      </column>
+      <column caption='Age Category' datatype='string' name='[Pivot Field Names - Split 1]' role='dimension' type='nominal' user:SplitFieldIndex='1' user:SplitFieldOrigin='[federated.0h7ur751upo8g615ls4z619gee9r].[Pivot Field Names]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [Pivot Field Names], &quot; &quot;, 1 ) )' />
+        <aliases>
+          <alias key='&quot;Retired&quot;' value='Retired (65+)' />
+          <alias key='&quot;Working&quot;' value='Working (20-64)' />
+          <alias key='&quot;Youth&quot;' value='Youth (0-19)' />
+        </aliases>
+      </column>
+      <column caption='Year' datatype='string' name='[Pivot Field Names - Split 2]' role='dimension' type='nominal' user:SplitFieldIndex='2' user:SplitFieldOrigin='[federated.0h7ur751upo8g615ls4z619gee9r].[Pivot Field Names]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [Pivot Field Names], &quot; &quot;, 2 ) )' />
+      </column>
+      <column caption='Category Year' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal' />
+      <column caption='Population' datatype='integer' default-format='n#,##0,K;-#,##0,K' name='[Pivot Field Values]' role='measure' type='quantitative' />
+      <column caption='Data11&amp;21' datatype='table' name='[__tableau_internal_object_id__].[FData.csv_B53B076430B54AD08ED00E1C7FA1EE1B]' role='measure' type='quantitative' />
+      <column caption='Cluster21-11' datatype='integer' name='[cluster]' role='dimension' type='ordinal' />
+      <column caption='Geography Code X' datatype='string' name='[geography code_x]' role='dimension' type='nominal' />
+      <column caption='Geography' datatype='string' name='[geography]' role='dimension' type='nominal' />
+      <column-instance column='[Calculation_0662513302777862]' derivation='None' name='[none:Calculation_0662513302777862:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Pivot Field Names - Split 2]' derivation='None' name='[none:Pivot Field Names - Split 2:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Pivot Field Names - Split 2:nk]' type='palette'>
+            <map to='#1b1b1b'>
+              <bucket>&quot;2021&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;2011&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_0662513302777862:nk]' type='palette'>
+            <map to='#1b1b1b'>
+              <bucket>&quot;Suburban&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Mixed&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Urban&quot;</bucket>
+            </map>
+            <map to='#ff2819'>
+              <bucket>&quot;Commuters&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Value Type' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Absolute&quot;'>
+          <calculation class='tableau' formula='&quot;Absolute&quot;' />
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='Data11&amp;21' id='FData.csv_B53B076430B54AD08ED00E1C7FA1EE1B'>
+            <properties context=''>
+              <relation name='Pivot' type='pivot'>
+                <columns>
+                  <column datatype='string' name='Pivot Field Names' />
+                  <column datatype='integer' name='Pivot Field Values' />
+                </columns>
+                <tag name='Pivot Field Names'>
+                  <value name='[Youth 2021]' />
+                  <value name='[Working 2021]' />
+                  <value name='[Retired 2021]' />
+                  <value name='[Retired 2011]' />
+                  <value name='[Working 2011]' />
+                  <value name='[Youth 2011]' />
+                </tag>
+                <groups>
+                  <group name='Pivot Field Values'>
+                    <field name='[FData.csv].[0--19]' />
+                    <field name='[FData.csv].[20--64]' />
+                    <field name='[FData.csv].[65--]' />
+                    <field name='[FData.csv].[Retired-age 65-90]' />
+                    <field name='[FData.csv].[Working-age 20-64]' />
+                    <field name='[FData.csv].[Young 0-19]' />
+                  </group>
+                </groups>
+                <relation connection='textscan.0kbj6g313ercd51gk2icj0lfkv16' name='FData.csv' table='[FData#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                    <column datatype='integer' name='F1' ordinal='0' />
+                    <column datatype='string' name='geography code_x' ordinal='1' />
+                    <column datatype='string' name='geography' ordinal='2' />
+                    <column datatype='integer' name='Young 0-19' ordinal='3' />
+                    <column datatype='integer' name='Working-age 20-64' ordinal='4' />
+                    <column datatype='integer' name='Retired-age 65-90' ordinal='5' />
+                    <column datatype='integer' name='0--19' ordinal='6' />
+                    <column datatype='integer' name='20--64' ordinal='7' />
+                    <column datatype='integer' name='65--' ordinal='8' />
+                    <column datatype='integer' name='cluster' ordinal='9' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
     <datasource caption='Data11' inline='true' name='federated.0thi0nr1oqsrg512lb0ch02g9zf4' version='18.1'>
       <connection class='federated'>
         <named-connections>
@@ -1525,6 +1535,9 @@
           </named-connection>
           <named-connection caption='Agg_data' name='textscan.0lhp23g10uy80r1h9im4p12oaj1e'>
             <connection class='textscan' directory='C:/Users/Aman Kumar Singh/Desktop/Visual Analytics' filename='Agg_data.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='Counties_and_Unitary_Authorities_December_2011_FCB_EW' name='ogrdirect.0o2k6hf1ob2qvr13rnuxp1kareh3'>
+            <connection class='ogrdirect' directory='C:/Users/Aman Kumar Singh/Downloads/Counties_and_Unitary_Authorities_December_2011_FCB_EW_2022_-4306930740997521613' filename='Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp' password='' server='' tablename='' />
           </named-connection>
         </named-connections>
         <relation type='collection'>
@@ -1606,6 +1619,16 @@
               <column datatype='real' name='Total distance (km)' ordinal='5' />
             </columns>
           </relation>
+          <relation connection='ogrdirect.0o2k6hf1ob2qvr13rnuxp1kareh3' name='Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp' table='[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp]' type='table'>
+            <columns>
+              <column datatype='string' name='ctyua11cd' ordinal='0' />
+              <column datatype='string' name='ctyua11cdo' ordinal='1' />
+              <column datatype='string' name='ctyua11nm' ordinal='2' />
+              <column datatype='string' name='ctyua11nmw' ordinal='3' />
+              <column datatype='string' name='GlobalID' ordinal='4' />
+              <column datatype='spatial' name='Geometry' ordinal='5' />
+            </columns>
+          </relation>
         </relation>
         <cols>
           <map key='[(2, 3, 4) Car or Van]' value='[Data.csv].[(2, 3, 4) Car or Van]' />
@@ -1662,6 +1685,8 @@
           <map key='[Economically Inactive]' value='[Data.csv].[Economically Inactive]' />
           <map key='[Economically active]' value='[Data.csv].[Economically active]' />
           <map key='[F1]' value='[Data.csv].[F1]' />
+          <map key='[Geometry]' value='[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp].[Geometry]' />
+          <map key='[GlobalID]' value='[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp].[GlobalID]' />
           <map key='[Mean Age]' value='[Agg_data.csv].[Mean Age]' />
           <map key='[No Cars and Vans]' value='[Data.csv].[No Cars and Vans]' />
           <map key='[P1]' value='[Data.csv].[P1]' />
@@ -1675,6 +1700,10 @@
           <map key='[Working-age 20-64]' value='[Data.csv].[Working-age 20-64]' />
           <map key='[Young 0-19]' value='[Data.csv].[Young 0-19]' />
           <map key='[cluster]' value='[Data.csv].[cluster]' />
+          <map key='[ctyua11cd]' value='[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp].[ctyua11cd]' />
+          <map key='[ctyua11cdo]' value='[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp].[ctyua11cdo]' />
+          <map key='[ctyua11nm]' value='[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp].[ctyua11nm]' />
+          <map key='[ctyua11nmw]' value='[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp].[ctyua11nmw]' />
           <map key='[geography code (Agg_data.csv)]' value='[Agg_data.csv].[geography code]' />
           <map key='[geography code]' value='[Data.csv].[geography code]' />
           <map key='[geography]' value='[Data.csv].[geography]' />
@@ -2566,6 +2595,83 @@
             <contains-null>true</contains-null>
             <object-id>[Agg_data.csv_EC8CA07239EA430ABE9BC981B3C5C850]</object-id>
           </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ctyua11cd</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ctyua11cd]</local-name>
+            <parent-name>[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp]</parent-name>
+            <remote-alias>ctyua11cd</remote-alias>
+            <ordinal>70</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp_6F0681E8FFAB4A9690F0EC350B4B3B41]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ctyua11cdo</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ctyua11cdo]</local-name>
+            <parent-name>[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp]</parent-name>
+            <remote-alias>ctyua11cdo</remote-alias>
+            <ordinal>71</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp_6F0681E8FFAB4A9690F0EC350B4B3B41]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ctyua11nm</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ctyua11nm]</local-name>
+            <parent-name>[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp]</parent-name>
+            <remote-alias>ctyua11nm</remote-alias>
+            <ordinal>72</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp_6F0681E8FFAB4A9690F0EC350B4B3B41]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ctyua11nmw</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ctyua11nmw]</local-name>
+            <parent-name>[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp]</parent-name>
+            <remote-alias>ctyua11nmw</remote-alias>
+            <ordinal>73</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp_6F0681E8FFAB4A9690F0EC350B4B3B41]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GlobalID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[GlobalID]</local-name>
+            <parent-name>[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp]</parent-name>
+            <remote-alias>GlobalID</remote-alias>
+            <ordinal>74</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp_6F0681E8FFAB4A9690F0EC350B4B3B41]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>75</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp_6F0681E8FFAB4A9690F0EC350B4B3B41]</object-id>
+          </metadata-record>
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
@@ -2575,12 +2681,27 @@
       <column caption='Cluster Name' datatype='string' name='[Calculation_2112493180248079]' role='dimension' type='nominal'>
         <calculation class='tableau' formula='CASE [cluster]&#13;&#10;WHEN 0 THEN &quot;Suburban&quot;&#13;&#10;WHEN 1 THEN &quot;Commuters&quot;&#13;&#10;WHEN 2 THEN &quot;Mixed&quot;&#13;&#10;WHEN 3 THEN &quot;Urban&quot;&#13;&#10;END' />
       </column>
+      <column caption='Global ID' datatype='string' name='[GlobalID]' role='dimension' type='nominal' />
       <column caption='Agg_data.csv' datatype='table' name='[__tableau_internal_object_id__].[Agg_data.csv_EC8CA07239EA430ABE9BC981B3C5C850]' role='measure' type='quantitative' />
+      <column caption='Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp' datatype='table' name='[__tableau_internal_object_id__].[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp_6F0681E8FFAB4A9690F0EC350B4B3B41]' role='measure' type='quantitative' />
       <column caption='Data11' datatype='table' name='[__tableau_internal_object_id__].[Data.csv_9FA1BA9793214E04B1948BB978495B09]' role='measure' type='quantitative' />
       <column caption='Cluster' datatype='integer' name='[cluster]' role='dimension' type='ordinal' />
+      <column caption='Ctyua11Cd' datatype='string' name='[ctyua11cd]' role='dimension' type='nominal' />
+      <column caption='Ctyua11Cdo' datatype='string' name='[ctyua11cdo]' role='dimension' type='nominal' />
+      <column caption='Ctyua11Nm' datatype='string' name='[ctyua11nm]' role='dimension' type='nominal' />
+      <column caption='Ctyua11Nmw' datatype='string' name='[ctyua11nmw]' role='dimension' type='nominal' />
       <column caption='geography code (Agg data.csv)' datatype='string' name='[geography code (Agg_data.csv)]' role='dimension' type='nominal' />
       <column datatype='string' name='[geography code]' role='dimension' semantic-role='[ZipCode].[Name]' type='nominal' />
-      <column caption='Geography' datatype='string' name='[geography]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column caption='Geography' datatype='string' name='[geography]' role='dimension' semantic-role='[County].[Name]' type='nominal'>
+        <semantic-values semantic-role='[Geographical].[Latitude]'>
+          <semantic-value key='&quot;Barking and Dagenham&quot;' value='51.553800000000003' />
+          <semantic-value key='&quot;Barnet&quot;' value='51.6252' />
+        </semantic-values>
+        <semantic-values semantic-role='[Geographical].[Longitude]'>
+          <semantic-value key='&quot;Barking and Dagenham&quot;' value='0.14810000000000001' />
+          <semantic-value key='&quot;Barnet&quot;' value='-0.1517' />
+        </semantic-values>
+      </column>
       <column-instance column='[Calculation_2112493180248079]' derivation='None' name='[none:Calculation_2112493180248079:nk]' pivot='key' type='nominal' />
       <column-instance column='[cluster]' derivation='None' name='[none:cluster:ok]' pivot='key' type='ordinal' />
       <group caption='Action (Cluster,Geography)' hidden='true' name='[Action (Cluster,Geography)]' name-style='unqualified' user:auto-column='sheet_link'>
@@ -2620,6 +2741,9 @@
             <map to='#1b1b1b'>
               <bucket>&quot;Suburban&quot;</bucket>
             </map>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
             <map to='#59a14f'>
               <bucket>&quot;Mixed&quot;</bucket>
             </map>
@@ -2648,6 +2772,20 @@
                   <column datatype='integer' name='Total Cars' ordinal='3' />
                   <column datatype='real' name='Average Distance' ordinal='4' />
                   <column datatype='real' name='Total distance (km)' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp' id='Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp_6F0681E8FFAB4A9690F0EC350B4B3B41'>
+            <properties context=''>
+              <relation connection='ogrdirect.0o2k6hf1ob2qvr13rnuxp1kareh3' name='Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp' table='[Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp]' type='table'>
+                <columns>
+                  <column datatype='string' name='ctyua11cd' ordinal='0' />
+                  <column datatype='string' name='ctyua11cdo' ordinal='1' />
+                  <column datatype='string' name='ctyua11nm' ordinal='2' />
+                  <column datatype='string' name='ctyua11nmw' ordinal='3' />
+                  <column datatype='string' name='GlobalID' ordinal='4' />
+                  <column datatype='spatial' name='Geometry' ordinal='5' />
                 </columns>
               </relation>
             </properties>
@@ -2734,6 +2872,14 @@
             <first-end-point object-id='Data.csv_9FA1BA9793214E04B1948BB978495B09' />
             <second-end-point object-id='Agg_data.csv_EC8CA07239EA430ABE9BC981B3C5C850' />
           </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[geography code (Agg_data.csv)]' />
+              <expression op='[ctyua11cd]' />
+            </expression>
+            <first-end-point object-id='Agg_data.csv_EC8CA07239EA430ABE9BC981B3C5C850' />
+            <second-end-point object-id='Counties_and_Unitary_Authorities_December_2011_FCB_EW.shp_6F0681E8FFAB4A9690F0EC350B4B3B41' />
+          </relationship>
         </relationships>
       </object-graph>
     </datasource>
@@ -2777,7 +2923,16 @@
             <column datatype='real' name='[P2]' role='measure' type='quantitative' />
             <column-instance column='[geography]' derivation='Attribute' name='[attr:geography:nk]' pivot='key' type='nominal' />
             <column caption='Cluster' datatype='integer' name='[cluster]' role='dimension' type='ordinal' />
-            <column caption='Geography' datatype='string' name='[geography]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+            <column caption='Geography' datatype='string' name='[geography]' role='dimension' semantic-role='[County].[Name]' type='nominal'>
+              <semantic-values semantic-role='[Geographical].[Latitude]'>
+                <semantic-value key='&quot;Barking and Dagenham&quot;' value='51.553800000000003' />
+                <semantic-value key='&quot;Barnet&quot;' value='51.6252' />
+              </semantic-values>
+              <semantic-values semantic-role='[Geographical].[Longitude]'>
+                <semantic-value key='&quot;Barking and Dagenham&quot;' value='0.14810000000000001' />
+                <semantic-value key='&quot;Barnet&quot;' value='-0.1517' />
+              </semantic-values>
+            </column>
             <column-instance column='[Calculation_2112493180248079]' derivation='None' name='[none:Calculation_2112493180248079:nk]' pivot='key' type='nominal' />
             <column-instance column='[geography]' derivation='None' name='[none:geography:nk]' pivot='key' type='nominal' />
             <column-instance column='[P1]' derivation='Sum' name='[sum:P1:qk]' pivot='key' type='quantitative' />
@@ -2866,14 +3021,14 @@
             <column caption='Cluster Name' datatype='string' name='[Calculation_2112493180248079]' role='dimension' type='nominal'>
               <calculation class='tableau' formula='CASE [cluster]&#13;&#10;WHEN 0 THEN &quot;Suburban&quot;&#13;&#10;WHEN 1 THEN &quot;Commuters&quot;&#13;&#10;WHEN 2 THEN &quot;Mixed&quot;&#13;&#10;WHEN 3 THEN &quot;Urban&quot;&#13;&#10;END' />
             </column>
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
             <column datatype='real' name='[Mean Age]' role='measure' type='quantitative' />
             <column datatype='integer' name='[Population]' role='measure' type='quantitative' />
             <column datatype='integer' name='[Total Cars]' role='measure' type='quantitative' />
             <column datatype='real' name='[Total distance (km)]' role='measure' type='quantitative' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
             <column caption='Cluster' datatype='integer' name='[cluster]' role='dimension' type='ordinal' />
-            <column caption='Geography' datatype='string' name='[geography]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
             <column-instance column='[Calculation_2112493180248079]' derivation='None' name='[none:Calculation_2112493180248079:nk]' pivot='key' type='nominal' />
-            <column-instance column='[geography]' derivation='None' name='[none:geography:nk]' pivot='key' type='nominal' />
             <column-instance column='[Average Distance]' derivation='Sum' name='[sum:Average Distance:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Mean Age]' derivation='Sum' name='[sum:Mean Age:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Population]' derivation='Sum' name='[sum:Population:qk]' pivot='key' type='quantitative' />
@@ -2883,6 +3038,10 @@
           <aggregation value='true' />
         </view>
         <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0thi0nr1oqsrg512lb0ch02g9zf4].[Longitude (generated)]' field-type='quantitative' max='1347381.3015554391' min='-534754.50969272503' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0thi0nr1oqsrg512lb0ch02g9zf4].[Latitude (generated)]' field-type='quantitative' max='7766113.9845006028' min='6453799.1491307393' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
           <style-rule element='map-layer'>
             <format attr='enabled' id='b01002_001e' value='false' />
             <format attr='enabled' id='b01002_002e' value='false' />
@@ -2927,17 +3086,17 @@
             <mark class='Multipolygon' />
             <encodings>
               <color column='[federated.0thi0nr1oqsrg512lb0ch02g9zf4].[none:Calculation_2112493180248079:nk]' />
-              <lod column='[federated.0thi0nr1oqsrg512lb0ch02g9zf4].[none:geography:nk]' />
+              <lod column='[federated.0thi0nr1oqsrg512lb0ch02g9zf4].[clct:Geometry:nk]' />
               <tooltip column='[federated.0thi0nr1oqsrg512lb0ch02g9zf4].[sum:Average Distance:qk]' />
               <tooltip column='[federated.0thi0nr1oqsrg512lb0ch02g9zf4].[sum:Mean Age:qk]' />
               <tooltip column='[federated.0thi0nr1oqsrg512lb0ch02g9zf4].[sum:Population:qk]' />
               <tooltip column='[federated.0thi0nr1oqsrg512lb0ch02g9zf4].[sum:Total Cars:qk]' />
               <tooltip column='[federated.0thi0nr1oqsrg512lb0ch02g9zf4].[sum:Total distance (km):qk]' />
-              <geometry column='[federated.0thi0nr1oqsrg512lb0ch02g9zf4].[Geometry (generated)]' />
+              <geometry column='[federated.0thi0nr1oqsrg512lb0ch02g9zf4].[clct:Geometry:nk]' />
             </encodings>
             <customized-tooltip>
               <formatted-text>
-                <run bold='true' fontcolor='#000000' fontsize='12'><![CDATA[<[federated.0thi0nr1oqsrg512lb0ch02g9zf4].[none:Calculation_2112493180248079:nk]> | <[federated.0thi0nr1oqsrg512lb0ch02g9zf4].[none:geography:nk]>]]></run>
+                <run bold='true' fontcolor='#000000' fontsize='12'><![CDATA[<[federated.0thi0nr1oqsrg512lb0ch02g9zf4].[none:Calculation_2112493180248079:nk]> | ]]></run>
                 <run>Æ&#10;&#10;</run>
                 <run bold='true' fontcolor='#000000'>Demographics</run>
                 <run>Æ&#10;</run>
@@ -2986,8 +3145,8 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='Select County' datatype='string' name='[Geography_Pivot Parameter]' param-domain-type='list' role='measure' type='nominal' value='&quot;Waltham Forest&quot;'>
-              <calculation class='tableau' formula='&quot;Waltham Forest&quot;' />
+            <column caption='Select County' datatype='string' name='[Geography_Pivot Parameter]' param-domain-type='list' role='measure' type='nominal' value='&quot;Cambridgeshire&quot;'>
+              <calculation class='tableau' formula='&quot;Cambridgeshire&quot;' />
             </column>
             <column caption='Value Type' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Absolute&quot;'>
               <calculation class='tableau' formula='&quot;Absolute&quot;' />
@@ -3484,6 +3643,43 @@
       </table>
       <simple-id uuid='{ED442E33-FEE2-445D-AE6F-60228F8A985F}' />
     </worksheet>
+    <worksheet name='Sheet 7'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Data11' name='federated.0thi0nr1oqsrg512lb0ch02g9zf4' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0thi0nr1oqsrg512lb0ch02g9zf4'>
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.0thi0nr1oqsrg512lb0ch02g9zf4].[clct:Geometry:nk]' />
+              <geometry column='[federated.0thi0nr1oqsrg512lb0ch02g9zf4].[clct:Geometry:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0thi0nr1oqsrg512lb0ch02g9zf4].[Latitude (generated)]</rows>
+        <cols>[federated.0thi0nr1oqsrg512lb0ch02g9zf4].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{117F9922-16D0-4C01-A89D-FE2E07A4C790}' />
+    </worksheet>
   </worksheets>
   <dashboards>
     <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
@@ -3493,8 +3689,8 @@
         <datasource name='Parameters' />
       </datasources>
       <datasource-dependencies datasource='Parameters'>
-        <column caption='Select County' datatype='string' name='[Geography_Pivot Parameter]' param-domain-type='list' role='measure' type='nominal' value='&quot;Waltham Forest&quot;'>
-          <calculation class='tableau' formula='&quot;Waltham Forest&quot;' />
+        <column caption='Select County' datatype='string' name='[Geography_Pivot Parameter]' param-domain-type='list' role='measure' type='nominal' value='&quot;Cambridgeshire&quot;'>
+          <calculation class='tableau' formula='&quot;Cambridgeshire&quot;' />
           <members>
             <member value='&quot;Barking and Dagenham&quot;' />
             <member value='&quot;Barnet&quot;' />
@@ -3813,7 +4009,7 @@
       <simple-id uuid='{10F32E69-193F-45C6-B0FE-D0F3C5D605D0}' />
     </dashboard>
   </dashboards>
-  <windows saved-dpi-scale-factor='1.5' source-height='106'>
+  <windows source-height='106'>
     <window class='worksheet' name='Sheet 1'>
       <cards>
         <edge name='left'>
@@ -3981,6 +4177,29 @@
         </edge>
       </cards>
       <simple-id uuid='{09FEF804-A5CD-4C5F-B74F-33A7C0024607}' />
+    </window>
+    <window class='worksheet' name='Sheet 7'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{92D22B79-C027-4687-967F-B69C684F7FD8}' />
     </window>
   </windows>
 </workbook>
