@@ -185,7 +185,7 @@ This project demonstrates:
 - Information visualization design principles
 - Tableau dashboard development
 ## Repository Structure
-│
+
 ├── Cleaned and transformed datasets/
 │   ├── Data21-11.csv
 │   └── Preprocessed Data.csv
