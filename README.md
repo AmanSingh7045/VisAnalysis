@@ -38,3 +38,69 @@ The analysis uses UK Census data for England and Wales at the county-level local
 
 - 174 County-Level Local Authorities
 - England and Wales
+
+## Data Preparation
+
+The original census datasets contained highly granular variables. To improve interpretability and support comparative analysis, variables were aggregated into broader socio-economic indicators.
+
+Examples include:
+
+| Original Variables | Aggregated Feature |
+|-------------------|-------------------|
+| Individual age bands | Youth, Working-Age, Retired Population |
+| Detailed commute distances | Short, Medium, Long Commutes |
+| Vehicle ownership categories | Car Ownership Indicators |
+| Economic activity classes | Employment Activity Indicators |
+
+Both absolute counts and proportional measures were analysed to account for differences in population size across counties.
+
+---
+
+## Methodology
+
+### 1. Data Transformation
+
+- Data cleaning and preprocessing
+- Feature aggregation
+- Standardisation and normalization
+
+### 2. Dimensionality Reduction
+
+Three techniques were explored:
+
+- Principal Component Analysis (PCA)
+- t-Distributed Stochastic Neighbor Embedding (t-SNE)
+- Uniform Manifold Approximation and Projection (UMAP)
+
+UMAP was selected as the primary technique due to its ability to preserve local and global structure while producing meaningful cluster separation.
+
+### 3. Clustering Analysis
+
+UMAP embeddings were used to identify socio-economic groupings across counties.
+
+Four distinct clusters emerged from the analysis.
+
+### 4. Bayesian Analysis
+
+Posterior distributions were used to investigate probabilistic relationships between:
+
+- Economic activity
+- Commuting behaviour
+- Car ownership
+- Demographic structure
+
+This approach provided insights into the strength and uncertainty of relationships among variables.
+
+### 5. Visual Analytics
+
+Interactive dashboards were developed using:
+
+- Tableau
+
+The dashboard enables:
+
+- Regional comparisons
+- Cluster exploration
+- Geographic analysis
+- Temporal age comparisons
+- Interactive filtering and drill-down
