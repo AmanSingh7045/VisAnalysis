@@ -184,7 +184,29 @@ This project demonstrates:
 - Interactive visual analytics
 - Information visualization design principles
 - Tableau dashboard development
-
+## Repository Structure
+│
+├── Cleaned and transformed datasets/
+│   ├── Data21-11.csv
+│   └── Preprocessed Data.csv
+│
+├── Final coursework report (PDF)/
+│   └── fp25098_Report.pdf
+│
+├── Interactive Tableau workbook/
+│   └── fp25098_Tableau.twbx
+│
+├── Raw census datasets (2011 & 2021)/
+│   ├── Aggregate_Data.csv
+│   ├── Car_or_van.csv
+│   ├── Distance_travelled_to_work.csv
+│   ├── Population_Age.csv
+│   ├── census2021-ts007-utla (Age).csv
+│   └── economic_activity.csv
+│
+├── Baysian_Posterior_Distribution.ipynb
+├── Dimensionality_Reduction.ipynb
+└── README.md
 ---
 
 ## Author
