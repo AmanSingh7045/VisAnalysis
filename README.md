@@ -184,31 +184,35 @@ This project demonstrates:
 - Interactive visual analytics
 - Information visualization design principles
 - Tableau dashboard development
+
 ## Repository Structure
 
-├── Cleaned and transformed datasets/
-│   ├── Data21-11.csv
-│   └── Preprocessed Data.csv
-│
-├── Final coursework report (PDF)/
-│   └── fp25098_Report.pdf
-│
-├── Interactive Tableau workbook/
-│   └── fp25098_Tableau.twbx
-│
-├── Raw census datasets (2011 & 2021)/
-│   ├── Aggregate_Data.csv
-│   ├── Car_or_van.csv
-│   ├── Distance_travelled_to_work.csv
-│   ├── Population_Age.csv
-│   ├── census2021-ts007-utla (Age).csv
-│   └── economic_activity.csv
-│
-├── Baysian_Posterior_Distribution.ipynb
-├── Dimensionality_Reduction.ipynb
-└── README.md
----
+The project is organized as follows:
 
+- **Cleaned and transformed datasets**
+  - Data21-11.csv: Combined dataset used for longitudinal analysis (2011–2021)
+  - Preprocessed Data.csv: Final cleaned dataset used for modelling and clustering
+
+- **Raw census datasets (2011 & 2021)**
+  - Aggregate_Data.csv: Aggregated socio-economic indicators
+  - Car_or_van.csv: Car and van ownership statistics
+  - Distance_travelled_to_work.csv: Commuting distance distribution data
+  - Population_Age.csv: Age structure data from 2011 Census
+  - census2021-ts007-utla (Age).csv: Age structure data from 2021 Census
+  - economic_activity.csv: Employment and economic activity indicators
+
+- **Final coursework report (PDF)**
+  - fp25098_Report.pdf: Full academic report detailing methodology, analysis, and findings
+
+- **Interactive Tableau workbook**
+  - fp25098_Tableau.twbx: Interactive dashboard for exploring socio-economic clusters and mobility patterns
+
+- **Notebooks**
+  - Baysian_Posterior_Distribution.ipynb: Bayesian analysis of relationships between socio-economic variables
+  - Dimensionality_Reduction.ipynb: PCA, t-SNE, and UMAP-based dimensionality reduction and clustering
+
+- **README.md**
+  - Project documentation and overview
 ## Author
 
 **Aman Singh**
