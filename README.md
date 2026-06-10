@@ -172,3 +172,24 @@ The dashboard enables:
 - PCA
 - Bayesian Analysis
 - Tableau
+## Learning Outcomes
+
+This project demonstrates:
+
+- Census data integration and transformation
+- High-dimensional data analysis
+- Dimensionality reduction techniques
+- Unsupervised clustering
+- Bayesian statistical reasoning
+- Interactive visual analytics
+- Information visualization design principles
+- Tableau dashboard development
+
+---
+
+## Author
+
+**Aman Singh**
+
+MSc Data Science Student  
+University of Bristol
