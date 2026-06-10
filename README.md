@@ -1,5 +1,7 @@
 # Employment and Mobility Patterns in Counties of England & Wales (2011) with Age Comparison to 2021
+## Tableau Dashboard Preview
 
+![Dashboard](Interactive%20Tableau%20Workbook/dashboard.png)
 ## Overview
 
 This project investigates socio-economic and mobility patterns across county-level local authorities in England and Wales using UK Census data. The analysis combines demographic, economic, transportation, and vehicle ownership indicators from the 2011 Census with age structure data from the 2021 Census to explore regional disparities and demographic changes over a decade.
