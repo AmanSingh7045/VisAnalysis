@@ -104,3 +104,71 @@ The dashboard enables:
 - Geographic analysis
 - Temporal age comparisons
 - Interactive filtering and drill-down
+
+## Identified Clusters
+
+### Cluster 1: Ageing, Long Commute Workforce
+
+**Characteristics:**
+
+- Older population structure
+- Longer commuting distances
+- Lower local employment accessibility
+
+### Cluster 2: Locally Employed, Mixed Mobility Communities
+
+**Characteristics:**
+
+- Strong local employment patterns
+- Diverse mobility behaviour
+- Balanced socio-economic indicators
+
+### Cluster 3: High Employment, High Mobility, Multi-Car Areas
+
+**Characteristics:**
+
+- High economic activity
+- Greater mobility
+- Higher rates of multi-car ownership
+
+### Cluster 4: Low Mobility, Car-Limited Areas
+
+**Characteristics:**
+
+- Lower vehicle ownership
+- Reduced mobility
+- Potentially constrained access to employment opportunities
+
+---
+
+## Key Findings
+
+### Employment and Mobility
+
+- Regions with higher economic activity generally exhibit greater mobility.
+- Multi-car ownership is associated with increased commuting flexibility.
+- Proximity to workplaces appears to be a stronger driver of economic activity than vehicle ownership alone.
+
+### Demographic Change
+
+- Comparison between 2011 and 2021 indicates a gradual ageing of the population.
+- Several regions experienced significant shifts toward older age structures over the decade.
+
+### Spatial Patterns
+
+- Socio-economic clusters are geographically concentrated rather than randomly distributed.
+- Central England contains many high-employment, high-mobility areas.
+- Parts of Wales, Northern England, and South-West England display ageing populations and longer commuting patterns.
+
+---
+
+## Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- UMAP
+- PCA
+- Bayesian Analysis
+- Tableau
